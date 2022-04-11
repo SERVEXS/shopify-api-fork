@@ -37,7 +37,7 @@
         "firebase/php-jwt": "^5.2",
         "psr/http-client": "^1.0",
         "guzzlehttp/guzzle": "^6.0",
-        "doctrine/inflector": "^2.0",
+        "doctrine/inflector": "^1.4.4 || 2.0",
         "ext-json": "*",
       "ext-mbstring": "*"
     },
