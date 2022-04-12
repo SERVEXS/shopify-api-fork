@@ -207,12 +207,12 @@ class Http
             }
         } while ($currentTries < $maxTries);
 
-        if ($response->hasHeader(HttpHeaders::X_SHOPIFY_API_DEPRECATED_REASON)) {
-            $this->logApiDeprecation(
-                $url->__toString(),
-                $response->getHeaderLine(HttpHeaders::X_SHOPIFY_API_DEPRECATED_REASON)
-            );
-        }
+        //if ($response->hasHeader(HttpHeaders::X_SHOPIFY_API_DEPRECATED_REASON)) {
+        //    $this->logApiDeprecation(
+        //        $url->__toString(),
+        //        $response->getHeaderLine(HttpHeaders::X_SHOPIFY_API_DEPRECATED_REASON)
+        //    );
+        //}
 
         return $response;
     }
