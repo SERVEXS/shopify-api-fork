@@ -100,7 +100,7 @@ class BaseTestCase extends TestCase
 
         $i = 0;
         $client->expects($this->exactly(count($requestMatchers)))
-            ->method('sendRequest')
+            ->method('send')
             ->withConsecutive(...$requestMatchers)
             ->willReturnCallback(
                 function () use (&$i, $newResponses) {

@@ -192,7 +192,7 @@ class Http
         do {
             $currentTries++;
 
-            $response = HttpResponse::fromResponse($client->sendRequest($request));
+            $response = HttpResponse::fromResponse($client->send($request));
 
             if (in_array($response->getStatusCode(), self::RETRIABLE_STATUS_CODES)) {
                 $retryAfter = $response->hasHeader(HttpHeaders::RETRY_AFTER)
