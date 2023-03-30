@@ -6,7 +6,7 @@ namespace ShopifyTest;
 
 use GuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Client\ClientInterface;
+use GuzzleHttp\ClientInterface;
 use Shopify\Clients\HttpClientFactory;
 use Shopify\Context;
 use Shopify\Exception\HttpRequestException;

@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -35,34 +39,6 @@ final class FulfillmentService202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["fulfillment_services" => [["id" => 755357713, "name" => "Mars Fulfillment", "email" => null, "service_name" => "Mars Fulfillment", "handle" => "mars-fulfillment", "fulfillment_orders_opt_in" => true, "include_pending_stock" => false, "provider_id" => null, "location_id" => 24826418, "callback_url" => "http://google.com/", "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/755357713"]]]
-                )),
-                "https://test-shop.myshopify.io/admin/api/2022-04/fulfillment_services.json",
-                "GET",
-                null,
-                [
-                    "X-Shopify-Access-Token: this_is_a_test_token",
-                ],
-            ),
-        ]);
-
-        FulfillmentService::all(
-            $this->test_session,
-            [],
-            [],
-        );
-    }
-
-    /**
-
-     *
-     * @return void
-     */
-    public function test_2(): void
-    {
-        $this->mockTransportRequests([
-            new MockRequest(
-                $this->buildMockHttpResponse(200, json_encode(
                   ["fulfillment_services" => [["id" => 611870435, "name" => "Venus Fulfillment", "email" => null, "service_name" => "Venus Fulfillment", "handle" => "venus-fulfillment", "fulfillment_orders_opt_in" => false, "include_pending_stock" => false, "provider_id" => null, "location_id" => 611870435, "callback_url" => null, "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/611870435"], ["id" => 755357713, "name" => "Mars Fulfillment", "email" => null, "service_name" => "Mars Fulfillment", "handle" => "mars-fulfillment", "fulfillment_orders_opt_in" => true, "include_pending_stock" => false, "provider_id" => null, "location_id" => 24826418, "callback_url" => "http://google.com/", "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/755357713"]]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/fulfillment_services.json?scope=all",
@@ -86,12 +62,40 @@ final class FulfillmentService202204Test extends BaseTestCase
      *
      * @return void
      */
+    public function test_2(): void
+    {
+        $this->mockTransportRequests([
+            new MockRequest(
+                $this->buildMockHttpResponse(200, json_encode(
+                  ["fulfillment_services" => [["id" => 755357713, "name" => "Mars Fulfillment", "email" => null, "service_name" => "Mars Fulfillment", "handle" => "mars-fulfillment", "fulfillment_orders_opt_in" => true, "include_pending_stock" => false, "provider_id" => null, "location_id" => 24826418, "callback_url" => "http://google.com/", "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/755357713"]]]
+                )),
+                "https://test-shop.myshopify.io/admin/api/2022-04/fulfillment_services.json",
+                "GET",
+                null,
+                [
+                    "X-Shopify-Access-Token: this_is_a_test_token",
+                ],
+            ),
+        ]);
+
+        FulfillmentService::all(
+            $this->test_session,
+            [],
+            [],
+        );
+    }
+
+    /**
+
+     *
+     * @return void
+     */
     public function test_3(): void
     {
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["fulfillment_service" => ["id" => 1061774488, "name" => "Jupiter Fulfillment", "email" => null, "service_name" => "Jupiter Fulfillment", "handle" => "jupiter-fulfillment", "fulfillment_orders_opt_in" => false, "include_pending_stock" => false, "provider_id" => null, "location_id" => 1072404545, "callback_url" => "http://google.com/", "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/1061774488"]]
+                  ["fulfillment_service" => ["id" => 1061774487, "name" => "Jupiter Fulfillment", "email" => null, "service_name" => "Jupiter Fulfillment", "handle" => "jupiter-fulfillment", "fulfillment_orders_opt_in" => false, "include_pending_stock" => false, "provider_id" => null, "location_id" => 1072404542, "callback_url" => "http://google.com/", "tracking_support" => true, "inventory_management" => true, "admin_graphql_api_id" => "gid://shopify/ApiFulfillmentService/1061774487"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/fulfillment_services.json",
                 "POST",
@@ -160,7 +164,7 @@ final class FulfillmentService202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["fulfillment_service" => ["id" => 755357713, "name" => "New Fulfillment Service Name"]]),
+                json_encode(["fulfillment_service" => ["name" => "New Fulfillment Service Name"]]),
             ),
         ]);
 

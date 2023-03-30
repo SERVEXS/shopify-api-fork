@@ -59,7 +59,7 @@ abstract class Base
 
     public function save($updateObject = false): void
     {
-        $data = self::dataDiff($this->toArray(), $this->originalState);
+        $data = self::dataDiff($this->toArray(true), $this->originalState);
 
         $method = !empty($data[static::$PRIMARY_KEY]) ? "put" : "post";
 
@@ -98,12 +98,12 @@ abstract class Base
         return static::$PREV_PAGE_QUERY;
     }
 
-    public function toArray(): array
+    public function toArray($saving = false): array
     {
         $data = [];
 
         foreach ($this->getProperties() as $prop) {
-            if (in_array($prop, static::$READ_ONLY_ATTRIBUTES)) {
+            if ($saving && in_array($prop, static::$READ_ONLY_ATTRIBUTES)) {
                 continue;
             }
 
@@ -113,20 +113,12 @@ abstract class Base
                     $data[$prop] = [];
                     /** @var self $assoc */
                     foreach ($this->$prop as $assoc) {
-                        if (empty($assoc) || is_array($assoc)) {
-                            array_push($data[$prop], $assoc);
-                        } else {
-                            array_push($data[$prop], $assoc->toArray());
-                        }
+                        array_push($data[$prop], $this->subAttributeToArray($assoc, $saving));
                     }
                 }
             } elseif (self::isHasOneAttribute($prop)) {
                 if ($includeProp) {
-                    if (empty($this->$prop) || is_array($this->$prop)) {
-                        $data[$prop] = $this->$prop;
-                    } else {
-                        $data[$prop] = $this->$prop->toArray();
-                    }
+                    $data[$prop] = $this->subAttributeToArray($this->$prop, $saving);
                 }
             } elseif ($includeProp) {
                 $data[$prop] = $this->$prop;
@@ -137,6 +129,12 @@ abstract class Base
     }
 
     protected static function getJsonBodyName(): string
+    {
+        $className = preg_replace("/^([A-z_0-9]+\\\)*([A-z_]+)/", "$2", static::class);
+        return strtolower(preg_replace("/([a-z])([A-Z])/", "$1_$2", $className));
+    }
+
+    protected static function getJsonResponseBodyName(): string
     {
         $className = preg_replace("/^([A-z_0-9]+\\\)*([A-z_]+)/", "$2", static::class);
         return strtolower(preg_replace("/([a-z])([A-Z])/", "$1_$2", $className));
@@ -266,7 +264,7 @@ abstract class Base
         $objects = [];
 
         $body = $response->getDecodedBody();
-        $className = static::getJsonBodyName();
+        $className = static::getJsonResponseBodyName();
         $pluralClass = self::pluralize($className);
 
         if (!empty($body)) {
@@ -393,5 +391,23 @@ abstract class Base
         }
 
         return array_unique(array_merge($props, array_keys($this->setProps)));
+    }
+
+    /**
+     * @param array|null|Base $attribute
+     * @return array|null
+     */
+    private function subAttributeToArray($attribute, bool $saving)
+    {
+        if (is_array($attribute)) {
+            $subAttribute = static::createInstance($attribute, $this->session);
+            $retVal = $subAttribute->toArray($saving);
+        } elseif (empty($attribute)) {
+            $retVal = $attribute;
+        } else {
+            $retVal = $attribute->toArray($saving);
+        }
+
+        return $retVal;
     }
 }

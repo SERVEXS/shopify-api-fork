@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace Shopify\Rest\Admin2022_01;
@@ -25,6 +29,16 @@ class AssignedFulfillmentOrder extends Base
     protected static array $PATHS = [
         ["http_method" => "get", "operation" => "get", "ids" => [], "path" => "assigned_fulfillment_orders.json"]
     ];
+
+    /**
+
+     *
+     * @return string
+     */
+    protected static function getJsonResponseBodyName(): string
+    {
+        return "fulfillment_order";
+    }
 
     /**
      * @param Session $session

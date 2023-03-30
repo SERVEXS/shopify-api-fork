@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -91,7 +95,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["id" => 1025371369, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2022-03-30T19:47:18-04:00", "updated_at" => "2022-03-30T19:47:18-04:00", "published_at" => "2022-03-30T19:47:18-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371369"]]
+                  ["page" => ["id" => 1025371373, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2023-01-03T12:23:38-05:00", "updated_at" => "2023-01-03T12:23:38-05:00", "published_at" => "2023-01-03T12:23:38-05:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371373"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages.json",
                 "POST",
@@ -119,36 +123,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["id" => 1025371370, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2022-03-30T19:47:19-04:00", "updated_at" => "2022-03-30T19:47:19-04:00", "published_at" => null, "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371370"]]
-                )),
-                "https://test-shop.myshopify.io/admin/api/2022-04/pages.json",
-                "POST",
-                null,
-                [
-                    "X-Shopify-Access-Token: this_is_a_test_token",
-                ],
-                json_encode(["page" => ["title" => "Warranty information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "published" => false]]),
-            ),
-        ]);
-
-        $page = new Page($this->test_session);
-        $page->title = "Warranty information";
-        $page->body_html = "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>";
-        $page->published = false;
-        $page->save();
-    }
-
-    /**
-
-     *
-     * @return void
-     */
-    public function test_5(): void
-    {
-        $this->mockTransportRequests([
-            new MockRequest(
-                $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["id" => 1025371371, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2022-03-30T19:47:21-04:00", "updated_at" => "2022-03-30T19:47:21-04:00", "published_at" => "2022-03-30T19:47:21-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371371"]]
+                  ["page" => ["id" => 1025371369, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2023-01-03T12:22:57-05:00", "updated_at" => "2023-01-03T12:22:57-05:00", "published_at" => "2023-01-03T12:22:57-05:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371369"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages.json",
                 "POST",
@@ -171,6 +146,35 @@ final class Page202204Test extends BaseTestCase
                 "namespace" => "global"
             ]
         ];
+        $page->save();
+    }
+
+    /**
+
+     *
+     * @return void
+     */
+    public function test_5(): void
+    {
+        $this->mockTransportRequests([
+            new MockRequest(
+                $this->buildMockHttpResponse(200, json_encode(
+                  ["page" => ["id" => 1025371374, "title" => "Warranty information", "shop_id" => 548380009, "handle" => "warranty-information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "author" => "Shopify API", "created_at" => "2023-01-03T12:23:49-05:00", "updated_at" => "2023-01-03T12:23:49-05:00", "published_at" => null, "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/1025371374"]]
+                )),
+                "https://test-shop.myshopify.io/admin/api/2022-04/pages.json",
+                "POST",
+                null,
+                [
+                    "X-Shopify-Access-Token: this_is_a_test_token",
+                ],
+                json_encode(["page" => ["title" => "Warranty information", "body_html" => "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>", "published" => false]]),
+            ),
+        ]);
+
+        $page = new Page($this->test_session);
+        $page->title = "Warranty information";
+        $page->body_html = "<h2>Warranty</h2>\n<p>Returns accepted if we receive items <strong>30 days after purchase</strong>.</p>";
+        $page->published = false;
         $page->save();
     }
 
@@ -241,7 +245,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["shop_id" => 548380009, "body_html" => "<p>Returns accepted if we receive the items 14 days after purchase.</p>", "title" => "Terms of Services", "handle" => "tos", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2022-03-30T19:47:28-04:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
+                  ["page" => ["shop_id" => 548380009, "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2023-01-03T12:23:26-05:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages/131092082.json",
                 "PUT",
@@ -249,13 +253,20 @@ final class Page202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["page" => ["id" => 131092082, "body_html" => "<p>Returns accepted if we receive the items 14 days after purchase.</p>"]]),
+                json_encode(["page" => ["metafields" => [["key" => "new", "value" => "new value", "type" => "single_line_text_field", "namespace" => "global"]]]]),
             ),
         ]);
 
         $page = new Page($this->test_session);
         $page->id = 131092082;
-        $page->body_html = "<p>Returns accepted if we receive the items 14 days after purchase.</p>";
+        $page->metafields = [
+            [
+                "key" => "new",
+                "value" => "new value",
+                "type" => "single_line_text_field",
+                "namespace" => "global"
+            ]
+        ];
         $page->save();
     }
 
@@ -269,7 +280,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["shop_id" => 548380009, "author" => "Christopher Gorski", "body_html" => "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>", "handle" => "new-warranty", "title" => "New warranty", "id" => 131092082, "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2022-03-30T19:47:29-04:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
+                  ["page" => ["shop_id" => 548380009, "published_at" => null, "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2023-01-03T12:23:07-05:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages/131092082.json",
                 "PUT",
@@ -277,16 +288,13 @@ final class Page202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["page" => ["id" => 131092082, "body_html" => "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>", "author" => "Christopher Gorski", "title" => "New warranty", "handle" => "new-warranty"]]),
+                json_encode(["page" => ["published" => false]]),
             ),
         ]);
 
         $page = new Page($this->test_session);
         $page->id = 131092082;
-        $page->body_html = "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>";
-        $page->author = "Christopher Gorski";
-        $page->title = "New warranty";
-        $page->handle = "new-warranty";
+        $page->published = false;
         $page->save();
     }
 
@@ -300,7 +308,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["shop_id" => 548380009, "published_at" => "2022-03-30T19:47:31-04:00", "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2022-03-30T19:47:31-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
+                  ["page" => ["shop_id" => 548380009, "published_at" => "2023-01-03T12:23:46-05:00", "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2023-01-03T12:23:46-05:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages/131092082.json",
                 "PUT",
@@ -308,7 +316,7 @@ final class Page202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["page" => ["id" => 131092082, "published" => true]]),
+                json_encode(["page" => ["published" => true]]),
             ),
         ]);
 
@@ -328,7 +336,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["shop_id" => 548380009, "published_at" => null, "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2022-03-30T19:47:32-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
+                  ["page" => ["shop_id" => 548380009, "author" => "Christopher Gorski", "body_html" => "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>", "handle" => "new-warranty", "title" => "New warranty", "id" => 131092082, "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2023-01-03T12:23:28-05:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages/131092082.json",
                 "PUT",
@@ -336,13 +344,16 @@ final class Page202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["page" => ["id" => 131092082, "published" => false]]),
+                json_encode(["page" => ["body_html" => "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>", "author" => "Christopher Gorski", "title" => "New warranty", "handle" => "new-warranty"]]),
             ),
         ]);
 
         $page = new Page($this->test_session);
         $page->id = 131092082;
-        $page->published = false;
+        $page->body_html = "<p>Returns accepted if we receive the items <strong>14 days</strong> after purchase.</p>";
+        $page->author = "Christopher Gorski";
+        $page->title = "New warranty";
+        $page->handle = "new-warranty";
         $page->save();
     }
 
@@ -356,7 +367,7 @@ final class Page202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["page" => ["shop_id" => 548380009, "title" => "Terms of Services", "handle" => "tos", "body_html" => "<p>We make <strong>perfect</strong> stuff, we don't need a warranty.</p>", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2022-03-30T19:47:33-04:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
+                  ["page" => ["shop_id" => 548380009, "body_html" => "<p>Returns accepted if we receive the items 14 days after purchase.</p>", "title" => "Terms of Services", "handle" => "tos", "id" => 131092082, "author" => "Dennis", "created_at" => "2008-07-15T20:00:00-04:00", "updated_at" => "2023-01-03T12:23:08-05:00", "published_at" => "2008-07-15T20:00:00-04:00", "template_suffix" => null, "admin_graphql_api_id" => "gid://shopify/OnlineStorePage/131092082"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/pages/131092082.json",
                 "PUT",
@@ -364,20 +375,13 @@ final class Page202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["page" => ["id" => 131092082, "metafields" => [["key" => "new", "value" => "new value", "type" => "single_line_text_field", "namespace" => "global"]]]]),
+                json_encode(["page" => ["body_html" => "<p>Returns accepted if we receive the items 14 days after purchase.</p>"]]),
             ),
         ]);
 
         $page = new Page($this->test_session);
         $page->id = 131092082;
-        $page->metafields = [
-            [
-                "key" => "new",
-                "value" => "new value",
-                "type" => "single_line_text_field",
-                "namespace" => "global"
-            ]
-        ];
+        $page->body_html = "<p>Returns accepted if we receive the items 14 days after purchase.</p>";
         $page->save();
     }
 

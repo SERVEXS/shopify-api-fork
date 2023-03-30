@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -35,7 +39,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transactions" => [["id" => 179259969, "order_id" => 450789469, "kind" => "refund", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-05T12:59:12-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => 801038806, "processed_at" => "2005-08-05T12:59:12-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "209.00", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/179259969"], ["id" => 389404469, "order_id" => 450789469, "kind" => "authorization", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-01T11:57:11-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => null, "processed_at" => "2005-08-01T11:57:11-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => ["testcase" => true, "authorization" => "123456"], "currency_exchange_adjustment" => null, "amount" => "598.94", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/389404469"], ["id" => 801038806, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-05T10:22:51-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2005-08-05T10:22:51-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "250.94", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/801038806"]]]
+                  ["transactions" => [["id" => 179259969, "order_id" => 450789469, "kind" => "refund", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-05T12:59:12-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => 801038806, "processed_at" => "2005-08-05T12:59:12-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "209.00", "currency" => "USD", "payment_id" => "c901414060.3", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/179259969"], ["id" => 389404469, "order_id" => 450789469, "kind" => "authorization", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-01T11:57:11-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => null, "processed_at" => "2005-08-01T11:57:11-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => ["testcase" => true, "authorization" => "123456"], "currency_exchange_adjustment" => null, "amount" => "598.94", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/389404469"], ["id" => 801038806, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => null, "created_at" => "2005-08-05T10:22:51-04:00", "test" => false, "authorization" => "authorization-key", "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2005-08-05T10:22:51-04:00", "device_id" => null, "error_code" => null, "source_name" => "web", "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "250.94", "currency" => "USD", "payment_id" => "c901414060.2", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/801038806"]]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json",
                 "GET",
@@ -63,7 +67,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transactions" => [["id" => 1068278492, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-03-30T19:53:20-04:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-03-30T19:53:20-04:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278492"]]]
+                  ["transactions" => [["id" => 1068278464, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-11-09T09:35:03-05:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-11-09T09:35:03-05:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278464"]]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json?since_id=801038806",
                 "GET",
@@ -91,7 +95,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transaction" => ["id" => 1068278488, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-03-30T19:53:13-04:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-03-30T19:53:13-04:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278488"]]
+                  ["transaction" => ["id" => 1068278467, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-11-09T09:35:19-05:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-11-09T09:35:19-05:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278467"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json",
                 "POST",
@@ -122,7 +126,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transaction" => ["id" => 1068278489, "order_id" => 450789469, "kind" => "void", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-03-30T19:53:15-04:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-03-30T19:53:15-04:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "0.00", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278489"]]
+                  ["transaction" => ["id" => 1068278463, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-11-09T09:35:00-05:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-11-09T09:35:00-05:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "598.94", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278463"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json",
                 "POST",
@@ -130,16 +134,14 @@ final class Transaction202201Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["transaction" => ["currency" => "USD", "amount" => "10.00", "kind" => "void", "parent_id" => 389404469]]),
+                json_encode(["transaction" => ["kind" => "capture", "authorization" => "authorization-key"]]),
             ),
         ]);
 
         $transaction = new Transaction($this->test_session);
         $transaction->order_id = 450789469;
-        $transaction->currency = "USD";
-        $transaction->amount = "10.00";
-        $transaction->kind = "void";
-        $transaction->parent_id = 389404469;
+        $transaction->kind = "capture";
+        $transaction->authorization = "authorization-key";
         $transaction->save();
     }
 
@@ -153,7 +155,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transaction" => ["id" => 1068278490, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-03-30T19:53:17-04:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-03-30T19:53:17-04:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278490"]]
+                  ["transaction" => ["id" => 1068278465, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-11-09T09:35:07-05:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-11-09T09:35:07-05:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "10.00", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278465"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json",
                 "POST",
@@ -185,7 +187,7 @@ final class Transaction202201Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["transaction" => ["id" => 1068278491, "order_id" => 450789469, "kind" => "capture", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-03-30T19:53:18-04:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-03-30T19:53:18-04:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "598.94", "currency" => "USD", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278491"]]
+                  ["transaction" => ["id" => 1068278466, "order_id" => 450789469, "kind" => "void", "gateway" => "bogus", "status" => "success", "message" => "Bogus Gateway: Forced success", "created_at" => "2022-11-09T09:35:11-05:00", "test" => true, "authorization" => null, "location_id" => null, "user_id" => null, "parent_id" => 389404469, "processed_at" => "2022-11-09T09:35:11-05:00", "device_id" => null, "error_code" => null, "source_name" => "755357713", "payment_details" => ["credit_card_bin" => null, "avs_result_code" => null, "cvv_result_code" => null, "credit_card_number" => "\u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 \u2022\u2022\u2022\u2022 4242", "credit_card_company" => "Visa", "credit_card_name" => null, "credit_card_wallet" => null, "credit_card_expiration_month" => null, "credit_card_expiration_year" => null], "receipt" => [], "currency_exchange_adjustment" => null, "amount" => "0.00", "currency" => "USD", "payment_id" => "c901414060.1", "admin_graphql_api_id" => "gid://shopify/OrderTransaction/1068278466"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-01/orders/450789469/transactions.json",
                 "POST",
@@ -193,14 +195,16 @@ final class Transaction202201Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["transaction" => ["kind" => "capture", "authorization" => "authorization-key"]]),
+                json_encode(["transaction" => ["currency" => "USD", "amount" => "10.00", "kind" => "void", "parent_id" => 389404469]]),
             ),
         ]);
 
         $transaction = new Transaction($this->test_session);
         $transaction->order_id = 450789469;
-        $transaction->kind = "capture";
-        $transaction->authorization = "authorization-key";
+        $transaction->currency = "USD";
+        $transaction->amount = "10.00";
+        $transaction->kind = "void";
+        $transaction->parent_id = 389404469;
         $transaction->save();
     }
 

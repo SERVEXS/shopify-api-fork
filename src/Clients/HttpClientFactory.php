@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace Shopify\Clients;
 
-use Psr\Http\Client\ClientInterface;
+use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 
 class HttpClientFactory
 {

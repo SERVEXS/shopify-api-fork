@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace Shopify\Rest\Admin2022_01;
@@ -25,6 +29,8 @@ use Shopify\Rest\Base;
  * @property string|null $multipass_identifier
  * @property string|null $note
  * @property int|null $orders_count
+ * @property string|null $password
+ * @property string|null $password_confirmation
  * @property string|null $phone
  * @property array|null $sms_marketing_consent
  * @property string|null $state
@@ -43,6 +49,7 @@ class Customer extends Base
     ];
     protected static array $HAS_MANY = [];
     protected static array $PATHS = [
+        ["http_method" => "delete", "operation" => "delete", "ids" => ["id"], "path" => "customers/<id>.json"],
         ["http_method" => "get", "operation" => "count", "ids" => [], "path" => "customers/count.json"],
         ["http_method" => "get", "operation" => "get", "ids" => [], "path" => "customers.json"],
         ["http_method" => "get", "operation" => "get", "ids" => ["id"], "path" => "customers/<id>.json"],
@@ -79,6 +86,31 @@ class Customer extends Base
 
     /**
      * @param Session $session
+     * @param int|string $id
+     * @param array $urlIds
+     * @param mixed[] $params
+     *
+     * @return array|null
+     */
+    public static function delete(
+        Session $session,
+        $id,
+        array $urlIds = [],
+        array $params = []
+    ): ?array {
+        $response = parent::request(
+            "delete",
+            "delete",
+            $session,
+            array_merge(["id" => $id], $urlIds),
+            $params,
+        );
+
+        return $response->getDecodedBody();
+    }
+
+    /**
+     * @param Session $session
      * @param array $urlIds
      * @param mixed[] $params Allowed indexes:
      *     ids,
@@ -107,7 +139,11 @@ class Customer extends Base
     /**
      * @param Session $session
      * @param array $urlIds
-     * @param mixed[] $params
+     * @param mixed[] $params Allowed indexes:
+     *     created_at_min,
+     *     created_at_max,
+     *     updated_at_min,
+     *     updated_at_max
      *
      * @return array|null
      */

@@ -4,18 +4,15 @@ declare(strict_types=1);
 
 namespace Shopify;
 
-use Psr\Http\Client\ClientExceptionInterface;
 use Shopify\Context;
 use Shopify\Auth\OAuth;
 use Shopify\Auth\Session;
 use Shopify\Clients\Graphql;
 use Shopify\Clients\HttpResponse;
-use Shopify\Exception\CookieNotFoundException;
 use Shopify\Exception\InvalidArgumentException;
-use Shopify\Exception\MissingArgumentException;
 use Shopify\Exception\SessionNotFoundException;
 use Firebase\JWT\JWT;
-use Shopify\Exception\UninitializedContextException;
+use Firebase\JWT\Key;
 
 /**
  * Class to store all util functions
@@ -36,7 +33,20 @@ final class Utils
     {
         $name = trim(strtolower($shop));
 
-        $allowedDomainsRegexp = $myshopifyDomain ? "($myshopifyDomain)" : "(myshopify.com|myshopify.io)";
+        if ($myshopifyDomain) {
+            $allowedDomains = [preg_replace("/^\*?\.?(.*)/", "$1", $myshopifyDomain)];
+        } else {
+            $allowedDomains = ["myshopify.com", "myshopify.io"];
+        }
+
+        if (Context::$CUSTOM_SHOP_DOMAINS) {
+            $allowedDomains = array_merge(
+                $allowedDomains,
+                preg_replace("/^\*?\.?(.*)/", "$1", Context::$CUSTOM_SHOP_DOMAINS)
+            );
+        }
+
+        $allowedDomainsRegexp = "(" . implode("|", $allowedDomains) . ")";
 
         if (!preg_match($allowedDomainsRegexp, $name) && (strpos($name, ".") === false)) {
             $name .= '.' . ($myshopifyDomain ?? 'myshopify.com');
@@ -92,7 +102,7 @@ final class Utils
      * @param string $referenceVersion The version to check
      *
      * @return bool
-     * @throws InvalidArgumentException
+     * @throws \Shopify\Exception\InvalidArgumentException
      */
     public static function isApiVersionCompatible(string $referenceVersion): bool
     {
@@ -118,7 +128,7 @@ final class Utils
      * @param bool   $includeExpired Optionally include expired sessions, defaults to false
      *
      * @return Session|null If exists, the most recent session
-     * @throws UninitializedContextException
+     * @throws \Shopify\Exception\UninitializedContextException
      */
     public static function loadOfflineSession(string $shop, bool $includeExpired = false): ?Session
     {
@@ -142,8 +152,8 @@ final class Utils
      * @param bool  $isOnline   Whether to load online or offline sessions
      *
      * @return Session|null The session or null if the session can't be found
-     * @throws CookieNotFoundException
-     * @throws MissingArgumentException
+     * @throws \Shopify\Exception\CookieNotFoundException
+     * @throws \Shopify\Exception\MissingArgumentException
      */
     public static function loadCurrentSession(array $rawHeaders, array $cookies, bool $isOnline): ?Session
     {
@@ -161,7 +171,8 @@ final class Utils
      */
     public static function decodeSessionToken(string $jwt): array
     {
-        $payload = JWT::decode($jwt, Context::$API_SECRET_KEY, array('HS256'));
+        JWT::$leeway = 10;
+        $payload = JWT::decode($jwt, new Key(Context::$API_SECRET_KEY, 'HS256'));
         return (array) $payload;
     }
 
@@ -173,11 +184,11 @@ final class Utils
      * @param string $rawBody    The raw HTTP request payload
      *
      * @return HttpResponse
-     * @throws ClientExceptionInterface
-     * @throws CookieNotFoundException
-     * @throws MissingArgumentException
-     * @throws SessionNotFoundException
-     * @throws UninitializedContextException
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     * @throws \Shopify\Exception\CookieNotFoundException
+     * @throws \Shopify\Exception\MissingArgumentException
+     * @throws \Shopify\Exception\SessionNotFoundException
+     * @throws \Shopify\Exception\UninitializedContextException
      */
     public static function graphqlProxy(array $rawHeaders, array $cookies, string $rawBody): HttpResponse
     {
@@ -189,5 +200,27 @@ final class Utils
         $client = new Graphql($session->getShop(), $session->getAccessToken());
 
         return $client->proxy($rawBody);
+    }
+
+    /**
+     * Returns the appropriate URL for the host that should load the embedded app.
+     *
+     * @param string $host The host value received from Shopify
+     *
+     * @return string
+     */
+    public static function getEmbeddedAppUrl(string $host): string
+    {
+        if (empty($host)) {
+            throw new InvalidArgumentException("Host value cannot be empty");
+        }
+
+        $decodedHost = base64_decode($host, true);
+        if (!$decodedHost) {
+            throw new InvalidArgumentException("Host was not a valid base64 string");
+        }
+
+        $apiKey = Context::$API_KEY;
+        return "https://$decodedHost/apps/$apiKey";
     }
 }

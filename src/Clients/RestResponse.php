@@ -25,7 +25,7 @@ class RestResponse extends HttpResponse
     }
 
     /**
-     * @return PageInfo|null Pagination Information
+     * @return \Shopify\Clients\PageInfo|null Pagination Information
      */
     public function getPageInfo(): ?PageInfo
     {

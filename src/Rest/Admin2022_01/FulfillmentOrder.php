@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace Shopify\Rest\Admin2022_01;
@@ -158,7 +162,7 @@ class FulfillmentOrder extends Base
 
     /**
      * @param mixed[] $params Allowed indexes:
-     *     new_location_id
+     *     fulfillment_order
      * @param array|string $body
      *
      * @return array|null

@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -35,7 +39,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_code" => ["id" => 1054381139, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2022-03-30T19:54:05-04:00", "updated_at" => "2022-03-30T19:54:05-04:00"]]
+                  ["discount_code" => ["id" => 1054381139, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2023-01-03T12:38:34-05:00", "updated_at" => "2023-01-03T12:38:34-05:00"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/discount_codes.json",
                 "POST",
@@ -63,7 +67,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_codes" => [["id" => 507328175, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2022-03-30T19:40:01-04:00", "updated_at" => "2022-03-30T19:40:01-04:00"]]]
+                  ["discount_codes" => [["id" => 507328175, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2023-01-03T12:21:36-05:00", "updated_at" => "2023-01-03T12:21:36-05:00"]]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/discount_codes.json",
                 "GET",
@@ -91,7 +95,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_code" => ["id" => 507328175, "price_rule_id" => 507328175, "code" => "WINTERSALE20OFF", "usage_count" => 0, "created_at" => "2022-03-30T19:40:01-04:00", "updated_at" => "2022-03-30T19:54:06-04:00"]]
+                  ["discount_code" => ["id" => 507328175, "price_rule_id" => 507328175, "code" => "WINTERSALE20OFF", "usage_count" => 0, "created_at" => "2023-01-03T12:21:36-05:00", "updated_at" => "2023-01-03T12:38:31-05:00"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/discount_codes/507328175.json",
                 "PUT",
@@ -99,7 +103,7 @@ final class DiscountCode202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["discount_code" => ["id" => 507328175, "code" => "WINTERSALE20OFF"]]),
+                json_encode(["discount_code" => ["code" => "WINTERSALE20OFF"]]),
             ),
         ]);
 
@@ -120,7 +124,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_code" => ["id" => 507328175, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2022-03-30T19:40:01-04:00", "updated_at" => "2022-03-30T19:40:01-04:00"]]
+                  ["discount_code" => ["id" => 507328175, "price_rule_id" => 507328175, "code" => "SUMMERSALE10OFF", "usage_count" => 0, "created_at" => "2023-01-03T12:21:36-05:00", "updated_at" => "2023-01-03T12:21:36-05:00"]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/discount_codes/507328175.json",
                 "GET",
@@ -206,7 +210,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_code_creation" => ["id" => 989355119, "price_rule_id" => 507328175, "started_at" => null, "completed_at" => null, "created_at" => "2022-03-30T19:54:15-04:00", "updated_at" => "2022-03-30T19:54:15-04:00", "status" => "queued", "codes_count" => 3, "imported_count" => 0, "failed_count" => 0, "logs" => []]]
+                  ["discount_code_creation" => ["id" => 989355119, "price_rule_id" => 507328175, "started_at" => null, "completed_at" => null, "created_at" => "2023-01-03T12:38:25-05:00", "updated_at" => "2023-01-03T12:38:25-05:00", "status" => "queued", "codes_count" => 3, "imported_count" => 0, "failed_count" => 0, "logs" => []]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/batch.json",
                 "POST",
@@ -236,7 +240,7 @@ final class DiscountCode202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["discount_code_creation" => ["id" => 173232803, "price_rule_id" => 507328175, "started_at" => null, "completed_at" => null, "created_at" => "2022-03-30T19:40:01-04:00", "updated_at" => "2022-03-30T19:40:01-04:00", "status" => "queued", "codes_count" => 3, "imported_count" => 0, "failed_count" => 0, "logs" => []]]
+                  ["discount_code_creation" => ["id" => 173232803, "price_rule_id" => 507328175, "started_at" => null, "completed_at" => null, "created_at" => "2023-01-03T12:21:36-05:00", "updated_at" => "2023-01-03T12:21:36-05:00", "status" => "queued", "codes_count" => 3, "imported_count" => 0, "failed_count" => 0, "logs" => []]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/price_rules/507328175/batch/173232803.json",
                 "GET",
