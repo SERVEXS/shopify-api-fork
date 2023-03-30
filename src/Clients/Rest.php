@@ -18,7 +18,7 @@ class Rest extends Http
      * @param string      $domain
      * @param string|null $accessToken
      *
-     * @throws MissingArgumentException
+     * @throws \Shopify\Exception\MissingArgumentException
      */
     public function __construct(string $domain, ?string $accessToken = null)
     {
@@ -71,9 +71,9 @@ class Rest extends Http
     }
 
     /**
-     * @param HttpResponse $response
+     * @param \Shopify\Clients\HttpResponse $response
      *
-     * @return PageInfo|null
+     * @return \Shopify\Clients\PageInfo|null
      */
     private function getPageInfo(HttpResponse $response): ?PageInfo
     {

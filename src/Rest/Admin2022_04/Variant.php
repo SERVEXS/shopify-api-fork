@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace Shopify\Rest\Admin2022_04;
@@ -32,7 +36,7 @@ use Shopify\Rest\Base;
  * @property bool|null $taxable
  * @property string|null $title
  * @property string|null $updated_at
- * @property int|null $weight
+ * @property float|null $weight
  * @property string|null $weight_unit
  */
 class Variant extends Base
@@ -47,6 +51,10 @@ class Variant extends Base
         ["http_method" => "get", "operation" => "get", "ids" => ["id"], "path" => "variants/<id>.json"],
         ["http_method" => "post", "operation" => "post", "ids" => ["product_id"], "path" => "products/<product_id>/variants.json"],
         ["http_method" => "put", "operation" => "put", "ids" => ["id"], "path" => "variants/<id>.json"]
+    ];
+    protected static array $READ_ONLY_ATTRIBUTES = [
+        "inventory_quantity",
+        "inventory_quantity_adjustment"
     ];
 
     /**

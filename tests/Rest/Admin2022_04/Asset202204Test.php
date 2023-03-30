@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -63,7 +67,7 @@ final class Asset202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["asset" => ["key" => "templates/index.liquid", "public_url" => null, "created_at" => "2010-07-12T15:31:50-04:00", "updated_at" => "2022-03-30T19:15:43-04:00", "content_type" => "application/x-liquid", "size" => 110, "checksum" => "cd71db2e14df976c8aa44b44c8dae77b", "theme_id" => 828155753]]
+                  ["asset" => ["key" => "templates/index.liquid", "public_url" => null, "created_at" => "2010-07-12T15:31:50-04:00", "updated_at" => "2023-01-03T12:39:59-05:00", "content_type" => "application/x-liquid", "size" => 110, "checksum" => "cd71db2e14df976c8aa44b44c8dae77b", "theme_id" => 828155753]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/themes/828155753/assets.json",
                 "PUT",
@@ -92,7 +96,7 @@ final class Asset202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["asset" => ["key" => "assets/empty.gif", "public_url" => "https://cdn.shopify.com/s/files/1/0005/4838/0009/t/1/assets/empty.gif?v=1648682145", "created_at" => "2022-03-30T19:15:45-04:00", "updated_at" => "2022-03-30T19:15:45-04:00", "content_type" => "image/gif", "size" => 43, "checksum" => "45cf913e5d9d3c9b2058033056d3dd23", "theme_id" => 828155753]]
+                  ["asset" => ["key" => "assets/empty.gif", "public_url" => "https://cdn.shopify.com/s/files/1/0005/4838/0009/t/1/assets/empty.gif?v=1672767606", "created_at" => "2023-01-03T12:40:06-05:00", "updated_at" => "2023-01-03T12:40:06-05:00", "content_type" => "image/gif", "size" => 43, "checksum" => "45cf913e5d9d3c9b2058033056d3dd23", "theme_id" => 828155753]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/themes/828155753/assets.json",
                 "PUT",
@@ -121,7 +125,7 @@ final class Asset202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["asset" => ["key" => "assets/bg-body.gif", "public_url" => "https://cdn.shopify.com/s/files/1/0005/4838/0009/t/1/assets/bg-body.gif?v=1648682146", "created_at" => "2010-07-12T15:31:50-04:00", "updated_at" => "2022-03-30T19:15:46-04:00", "content_type" => "image/gif", "size" => 43, "checksum" => "45cf913e5d9d3c9b2058033056d3dd23", "theme_id" => 828155753]]
+                  ["asset" => ["key" => "assets/bg-body.gif", "public_url" => "https://cdn.shopify.com/s/files/1/0005/4838/0009/t/1/assets/bg-body.gif?v=1672767597", "created_at" => "2010-07-12T15:31:50-04:00", "updated_at" => "2023-01-03T12:39:57-05:00", "content_type" => "image/gif", "size" => 43, "checksum" => "45cf913e5d9d3c9b2058033056d3dd23", "theme_id" => 828155753]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/themes/828155753/assets.json",
                 "PUT",
@@ -129,14 +133,14 @@ final class Asset202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["asset" => ["key" => "assets/bg-body.gif", "src" => "http://apple.com/new_bg.gif"]]),
+                json_encode(["asset" => ["key" => "assets/bg-body.gif", "src" => "http://example.com/new_bg.gif"]]),
             ),
         ]);
 
         $asset = new Asset($this->test_session);
         $asset->theme_id = 828155753;
         $asset->key = "assets/bg-body.gif";
-        $asset->src = "http://apple.com/new_bg.gif";
+        $asset->src = "http://example.com/new_bg.gif";
         $asset->save();
     }
 
@@ -150,7 +154,7 @@ final class Asset202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["asset" => ["key" => "layout/alternate.liquid", "public_url" => null, "created_at" => "2022-03-30T19:15:47-04:00", "updated_at" => "2022-03-30T19:15:47-04:00", "content_type" => "application/x-liquid", "size" => 3049, "checksum" => "1879a06996941b2ff1ff485a1fe60a97", "theme_id" => 828155753]]
+                  ["asset" => ["key" => "layout/alternate.liquid", "public_url" => null, "created_at" => "2023-01-03T12:40:04-05:00", "updated_at" => "2023-01-03T12:40:04-05:00", "content_type" => "application/x-liquid", "size" => 3049, "checksum" => "1879a06996941b2ff1ff485a1fe60a97", "theme_id" => 828155753]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/themes/828155753/assets.json",
                 "PUT",

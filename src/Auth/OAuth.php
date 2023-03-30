@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Shopify\Auth;
 
-use Psr\Http\Client\ClientExceptionInterface;
 use Shopify\Clients\Http;
 use Shopify\Clients\HttpHeaders;
 use Shopify\Clients\HttpResponse;
@@ -15,11 +14,8 @@ use Shopify\Exception\HttpRequestException;
 use Shopify\Exception\InvalidArgumentException;
 use Shopify\Exception\InvalidOAuthException;
 use Shopify\Exception\MissingArgumentException;
-use Shopify\Exception\OAuthCookieNotFoundException;
 use Shopify\Exception\OAuthSessionNotFoundException;
-use Shopify\Exception\PrivateAppException;
 use Shopify\Exception\SessionStorageException;
-use Shopify\Exception\UninitializedContextException;
 use Shopify\Utils;
 use Ramsey\Uuid\Uuid;
 
@@ -41,10 +37,10 @@ class OAuth
      * @param null|callable $setCookieFunction An optional override for setting cookie in response
      *
      * @return string The URL for OAuth redirection
-     * @throws CookieSetException
-     * @throws PrivateAppException
-     * @throws SessionStorageException
-     * @throws UninitializedContextException
+     * @throws \Shopify\Exception\CookieSetException
+     * @throws \Shopify\Exception\PrivateAppException
+     * @throws \Shopify\Exception\SessionStorageException
+     * @throws \Shopify\Exception\UninitializedContextException
      */
     public static function begin(
         string $shop,
@@ -93,7 +89,7 @@ class OAuth
         $query = [
             'client_id' => Context::$API_KEY,
             'scope' => Context::$SCOPES->toString(),
-            'redirect_uri' => 'https://' . Context::$HOST_NAME . $redirectPath,
+            'redirect_uri' => Context::$HOST_SCHEME . '://' . Context::$HOST_NAME . $redirectPath,
             'state' => $session->getState(),
             'grant_options[]' => $grantOptions,
         ];
@@ -112,13 +108,13 @@ class OAuth
      * @param null|callable $setCookieFunction An optional override for setting cookie in response.
      *
      * @return Session
-     * @throws HttpRequestException
-     * @throws InvalidOAuthException
-     * @throws OAuthCookieNotFoundException
-     * @throws OAuthSessionNotFoundException
-     * @throws PrivateAppException
-     * @throws SessionStorageException
-     * @throws UninitializedContextException
+     * @throws \Shopify\Exception\HttpRequestException
+     * @throws \Shopify\Exception\InvalidOAuthException
+     * @throws \Shopify\Exception\OAuthCookieNotFoundException
+     * @throws \Shopify\Exception\OAuthSessionNotFoundException
+     * @throws \Shopify\Exception\PrivateAppException
+     * @throws \Shopify\Exception\SessionStorageException
+     * @throws \Shopify\Exception\UninitializedContextException
      */
     public static function callback(array $cookies, array $query, ?callable $setCookieFunction = null): Session
     {
@@ -217,8 +213,8 @@ class OAuth
      * @param bool   $isOnline Whether to load online or offline sessions
      *
      * @return string The ID of the current session
-     * @throws MissingArgumentException
-     * @throws CookieNotFoundException
+     * @throws \Shopify\Exception\MissingArgumentException
+     * @throws \Shopify\Exception\CookieNotFoundException
      */
     public static function getCurrentSessionId(array $rawHeaders, array $cookies, bool $isOnline): string
     {
@@ -261,7 +257,7 @@ class OAuth
      * @param array $cookies The $cookies param from `callback`
      *
      * @return string The ID of the current session
-     * @throws CookieNotFoundException
+     * @throws \Shopify\Exception\CookieNotFoundException
      */
     private static function getCookieSessionId(array $cookies): string
     {
@@ -337,7 +333,7 @@ class OAuth
      * @param Session $session The current session
      *
      * @return bool
-     * @throws UninitializedContextException
+     * @throws \Shopify\Exception\UninitializedContextException
      */
     private static function isCallbackQueryValid(array $query, Session $session): bool
     {
@@ -360,7 +356,7 @@ class OAuth
      * @param Session $session The OAuth session
      *
      * @return AccessTokenResponse|AccessTokenOnlineResponse The access token exchanged for the OAuth code
-     * @throws HttpRequestException
+     * @throws \Shopify\Exception\HttpRequestException
      */
     private static function fetchAccessToken(
         array $query,
@@ -428,9 +424,9 @@ class OAuth
      * @param Http  $client
      * @param array $post The POST payload
      *
-     * @return HttpResponse
-     * @throws ClientExceptionInterface
-     * @throws UninitializedContextException
+     * @return \Shopify\Clients\HttpResponse
+     * @throws \Psr\Http\Client\ClientExceptionInterface
+     * @throws \Shopify\Exception\UninitializedContextException
      * @codeCoverageIgnore
      */
     public static function requestAccessToken(Http $client, array $post): HttpResponse

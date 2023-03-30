@@ -40,7 +40,7 @@ class PageInfo
      *
      * @param string $linkHeader Pagination link header
      *
-     * @return PageInfo
+     * @return \Shopify\Clients\PageInfo
      */
     public static function fromLinkHeader(string $linkHeader): PageInfo
     {

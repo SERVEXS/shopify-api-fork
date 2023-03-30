@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -156,7 +160,7 @@ final class Province202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["province" => ["id" => 224293623, "tax" => 0.09]]),
+                json_encode(["province" => ["tax" => 0.09]]),
             ),
         ]);
 

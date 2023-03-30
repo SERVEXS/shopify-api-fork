@@ -1,5 +1,9 @@
 <?php
 
+/***********************************************************************************************************************
+* This file is auto-generated. If you have an issue, please create a GitHub issue.                                     *
+***********************************************************************************************************************/
+
 declare(strict_types=1);
 
 namespace ShopifyTest\Rest;
@@ -118,7 +122,7 @@ final class Country202204Test extends BaseTestCase
         $this->mockTransportRequests([
             new MockRequest(
                 $this->buildMockHttpResponse(200, json_encode(
-                  ["country" => ["id" => 1070231512, "name" => "France", "code" => "FR", "tax_name" => "TVA", "tax" => 0.2, "provinces" => []]]
+                  ["country" => ["id" => 1070231510, "name" => "France", "code" => "FR", "tax_name" => "TVA", "tax" => 0.2, "provinces" => []]]
                 )),
                 "https://test-shop.myshopify.io/admin/api/2022-04/countries.json",
                 "POST",
@@ -211,7 +215,7 @@ final class Country202204Test extends BaseTestCase
                 [
                     "X-Shopify-Access-Token: this_is_a_test_token",
                 ],
-                json_encode(["country" => ["id" => 879921427, "tax" => 0.05]]),
+                json_encode(["country" => ["tax" => 0.05]]),
             ),
         ]);
 

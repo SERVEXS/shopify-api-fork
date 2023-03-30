@@ -25,7 +25,6 @@ final class AccessTokenOnlineResponse extends AccessTokenResponse
         ?AccessTokenOnlineUserInfo $associatedUser = null
     ) {
         parent::__construct($accessToken, $scope);
-
         $this->accessToken = $accessToken;
         $this->scope = $scope;
         $this->expiresIn = $expiresIn;

@@ -10,7 +10,7 @@ use Shopify\Webhooks\DeliveryMethod;
 class PubSub extends DeliveryMethod
 {
     /**
-     * @throws InvalidArgumentException
+     * @throws \Shopify\Exception\InvalidArgumentException
      */
     public function __construct()
     {
